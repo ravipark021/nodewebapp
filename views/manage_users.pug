@@ -1,0 +1,36 @@
+extends admin_tasks
+
+block adminContent
+    table.table
+        thead.thead-dark
+            tr
+                td Name
+                td Email
+                td Username
+                td Role
+                td Approved
+        tbody
+            each user in users
+                tr
+                    td #{user.name}
+                    td #{user.email}
+                    td #{user.username}
+                    td #{user.role}
+                    td 
+                        if user.approved==true
+                            input.toggle-event(type='checkbox', checked='', data-id=user._id, data-toggle='toggle', data-on='Yes', data-off='No')
+                        else
+                            input.toggle-event(type='checkbox', data-id=user._id, data-toggle='toggle', data-on='Yes', data-off='No')
+
+block script
+    script.
+        $(function() {
+            $('.toggle-event').change(function() {
+                console.log('Toggle: ' + $(this).prop('checked') + ' on id: ' + $(this).attr('data-id'));
+                let filters = {
+                    user_id: $(this).attr('data-id'),
+                    status: $(this).prop('checked')
+                };
+                changeUserAuthorization(filters);
+            });
+        });

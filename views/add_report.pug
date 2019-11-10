@@ -1,0 +1,61 @@
+extends admin_tasks
+
+block adminContent
+    .row
+        .col-md-4.column.ui-sortable
+        .col-md-8.column.ui-sortable
+            h1 Add New Report
+            form(method='POST', action='/admin/manage/reports/add')
+                table.table
+                    tbody
+                        tr
+                            td Report Name
+                            td
+                                input(type='text', name='reportName')
+                        tr
+                            td Report Description
+                            td
+                                input(type='textbox', name='description')
+                        tr
+                            td Regulatory Citation
+                            td
+                                input(type='textbox', name='regulatory_citation')
+                        tr
+                            td Regulatory Agency
+                            td
+                                input(type='textbox', name='regulatory_agency')
+                        tr
+                            td Country
+                            td
+                                input(type='textbox', name='country')
+                        tr
+                            td Report Frequency
+                            td
+                                input(type='textbox', name='report_frequency')
+                        tr
+                            td Entity Scope
+                            td
+                                input(type='textbox', name='entity_scope')
+                        tr
+                            td Event Scope
+                            td
+                                input(type='textbox', name='event_scope')
+                        tr
+                            td Product Scope
+                            td
+                                input(type='textbox', name='product_scope')
+                        tr
+                            td Report Fields
+                            td
+                                input(type='textbox', name='report_fields')
+                        tr
+                            td Report Template
+                            td
+                                input(type='textbox', name='report_template')
+                        tr
+                            td Report File
+                            td
+                                input#reportFile.btn.btn-primary.form-control-file(type='file', name='reportFile')
+                input.btn.btn-primary(type='submit',value='Add Report')
+        .col-md-4.column.ui-sortable
+        

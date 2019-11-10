@@ -1,0 +1,54 @@
+extends layout
+
+block content
+  .container
+    main.pb-3(role='main')
+      h1 Report Summary
+      .row
+        .col-sm-3
+            .card.border-primary.mb-3(style='max-width: 20rem;')
+                h4.card-title Report Name
+                .card-body
+                    p.card-text #{report.name}
+        .col-sm-3
+            .card.border-primary.mb-3(style='max-width: 20rem;')
+                h4.card-title Regualtory Citation
+                .card-body
+                    p.card-text #{report.regulatory_citation}
+        .col-sm-3
+            .card.border-primary.mb-3(style='max-width: 20rem;')
+                h4.card-title Regulatory Agency
+                .card-body
+                    p.card-text #{report.regulatory_agency}
+        .col-sm-3
+            .card.border-primary.mb-3(style='max-width: 20rem;')
+                h4.card-title Report Frequency
+                .card-body
+                    p.card-text #{report.report_frequency}
+      br
+      .row
+        .col-sm-3
+            .card.border-primary.mb-3(style='max-width: 20rem;')
+                h4.card-title Entity Scope
+                .card-body
+                    p.card-text #{report.entity_scope}
+        .col-sm-3
+            .card.border-primary.mb-3(style='max-width: 20rem;')
+                h4.card-title Event Scope
+                .card-body
+                    p.card-text #{report.event_scope}
+        .col-sm-3
+            .card.border-primary.mb-3(style='max-width: 20rem;')
+                h4.card-title Product Scope
+                .card-body
+                    p.card-text #{report.product_scope}
+        .col-sm-3
+            .card.border-primary.mb-3(style='max-width: 20rem;')
+                h4.card-title Report Fields
+                .card-body
+                    p.card-text #{report.report_template}
+      if isAdmin
+        .row
+          .col-sm-8
+          .col-sm-4
+            a.btn.btn-primary.col-sm-12.float-sm-left(href='/admin/report_details/'+ report._id) View Details

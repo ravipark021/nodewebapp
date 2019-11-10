@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  .form-group.row.d-flex.justify-content-center
+    .row.col-sm-9(style='margin: 5px 0px;')
+      input#searchReportText.form-control.col-sm-9(type='text', style='margin-right: 2%', name='searchReportText', placeholder='Search Report by Name')
+    .form-inline.col-sm-9
+      select.form-control.col-sm-3(style='margin-right: 5px;')
+        option(value='', selected='', disabled='') Select Country
+      select.form-control.col-sm-3(style='margin-right: 5px;')
+        option(value='', selected='', disabled='') Select Regulator
+      select.form-control.col-sm-3(style='margin-right: 5px;')
+        option(value='', selected='', disabled='') Select Frequency
+    .row.col-sm-9(style='margin: 5px 0px;')
+      .col-sm-12.row
+        input#searchCitation.form-control.col-sm-9(type='text', style='margin-right: 5%', name='searchCitation', placeholder='Regulatory Citation')
+        button#searchReportBtn.btn.btn-primary.col-sm-2.float-sm-left(type='button') Search
+  hr
+  #searchResults
+
+block script
+  script(src='/js/search.js')

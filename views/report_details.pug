@@ -1,0 +1,33 @@
+extends layout
+
+block content
+    table.table
+        thead
+            tr
+                td Reg Citation
+                td BR ID
+                td Rule Text
+                td Business Requirement
+                td Scope
+                td Report field name
+                td Format
+                td Valid Values
+                td PDE Name
+                td Table Name
+                td Transformation
+                td System/ Application Name
+        tbody
+            for detail in details
+                tr
+                    td #{detail.reg_citation}
+                    td #{detail.br_id}
+                    td #{detail.rule_text}
+                    td #{detail.business_requirement}
+                    td #{detail.scope}
+                    td #{detail.report_field_name}
+                    td #{detail.format}
+                    td #{detail.valid_values}
+                    td #{detail.pde_name}
+                    td #{detail.table_name}
+                    td #{detail.transformation}
+                    td #{detail.application_name}

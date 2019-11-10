@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  .row
+    .col-sm-7
+        figure.figure
+          .col-sm-3
+          .col-sm-9
+              img(src='../imgs/main.jpg')
+          h1(style='text-align: center;background: #e6ffff;') Reg Reporting Accelerator
+    .col-sm-5
+      br
+      br
+      br
+      h3 Login
+      form(method='POST', action='/users/login')
+        #form-group
+          label Username:
+          input.form-control(name='username',type='text')
+        #form-group
+          label Password:
+          input.form-control(name='password',type='password')
+        br
+        input.btn.btn-primary(type='submit',value='Login')

@@ -1,0 +1,11 @@
+extends admin_tasks
+
+block adminContent
+    h3 Manage Reports    
+    .row
+        .col-md-5.column.ui-sortable
+        .col-md-4.column.ui-sortable
+        .col-md-3.column.ui-sortable
+            .box.box-element.ui-draggable(style='')
+                .view
+                    a.btn.btn-block.btn-primary.btn-lg(href='/admin/manage/reports/add') Add New Report

@@ -1,0 +1,7 @@
+extends layout
+
+block content
+    h1 Add New Report
+            form(method='POST', action='/admin/manage/upload_report')
+                input#reportFile.btn.btn-primary.form-control-file(type='file', name='reportFile', enctype='multipart/form-data')
+                input.btn.btn-primary(type='submit',value='Add Report')
