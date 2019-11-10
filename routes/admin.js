@@ -11,7 +11,7 @@ router.get('/', ensureAdmin, function (req, res) {
 });
 
 router.get('/manage/users', ensureAdmin, function(req, res){
-    User.find({}, function(err, users){
+    User.find({_id: {$ne: req.user.id}}, function(err, users){
         res.render('manage_users', {users: users});
     });
 });
@@ -33,7 +33,7 @@ router.get('/manage/reports/add', ensureAdmin, function(req, res){
     res.render('add_report');
 });
 
-router.post('/manage/reports/add', ensureAdmin, function(req, res){
+router.post('/manage/reports/add', function(req, res){
     console.log(req.body);
     let report = new Report();
     report.name = req.body.reportName;
