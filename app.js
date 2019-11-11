@@ -8,7 +8,7 @@ const session = require('express-session');
 const passport = require('passport');
 const config = require('./config/database');
 
-mongoose.connect(config.database);
+mongoose.connect(config.database, { dbName: 'test_db', useNewUrlParser: true });
 let db = mongoose.connection;
 
 // Check connection
